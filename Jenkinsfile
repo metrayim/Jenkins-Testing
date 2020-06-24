@@ -1,15 +1,3 @@
-  stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
-        }
-so that you end up with:
-
 pipeline {
     agent {
         docker {
